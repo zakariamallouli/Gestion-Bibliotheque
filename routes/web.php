@@ -17,16 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/******************************************Admin Routes******************************************/
 
-Route::get('/testhome', 'HomeController@test')->name('testhome');
-
-//Route::get('/home/auteurs', 'AuteursController@index')->name('list_auteur');
-
+Auth::routes(['verify' => true]);
+Route::get('/admin/dashboard', 'HomeController@index')->name('home');
 Route::resource('/home/auteurs' , 'Admin\AuteursController', ['as'=>'home']);
-
 Route::resource('/home/editeurs' , 'Admin\EditeursController', ['as'=>'home']);
-
 Route::resource('/home/genres' , 'Admin\GenresController', ['as'=>'home']);
+
+/******************************************Admin Routes******************************************/

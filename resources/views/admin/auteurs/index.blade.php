@@ -1,12 +1,36 @@
 @extends('layouts.admin')
 @section('content')
 <section class="content">
-    <div class="container-fluid">
-    </br></br>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                @if(session()->has('error'))
+                <div class="alert alert-danger">
+                    {{ session()->get('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+            </div>
+        </div>
         <p>
             <a href="{{ route('home.auteurs.create') }}" class="btn btn-primary">Add New Auteur</a>
         </p>
-        <table class="table table-bordered table-striped">
+        <table class="table text-center table-bordered table-striped">
         <tr>
             <th>ID</th>
             <th>Nom</th>

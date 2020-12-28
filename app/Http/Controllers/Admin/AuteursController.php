@@ -46,7 +46,10 @@ class AuteursController extends Controller
         $auteur->adresse = $request->adresse;
         $auteur->tel = $request->tel;
         $auteur->save();
-        return redirect('home/auteurs');
+        if($auteur->save())
+            return redirect('home/auteurs')->with("success","Enregistrement Ajouté avec Succés");
+        else
+            return back()->with("error","Enregistrement n'a pas été ajouté, Ressayez");
     }
 
     /**
@@ -87,6 +90,10 @@ class AuteursController extends Controller
         $auteur->adresse = $request->adresse;
         $auteur->tel = $request->tel;
         $auteur->save();
+        if($auteur->save())
+            return redirect('home/auteurs')->with("success","Enregistrement Modifié avec Succés");
+        else
+            return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");
         return redirect()->route('home.auteurs.index');
     }
     
@@ -101,6 +108,6 @@ class AuteursController extends Controller
     public function destroy($id)
     {
         Auteur::destroy($id);
-        return redirect()->route('home.auteurs.index');
+        return redirect()->route('home.auteurs.index')->with("success","Enregistrement Supprimé avec Succés");
     }
 }

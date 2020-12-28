@@ -1,10 +1,23 @@
 @extends('layouts.admin')
 @section('content')
-<div class="content">
+<div class="container">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
+                    @if(session()->has('error'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('error') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mt-5">
                         <div class="card-header card-header-info">
                             <h4 class="card-title ">Ajouter Auteur</h4>
                            

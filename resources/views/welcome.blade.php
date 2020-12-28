@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 
         <!-- Title -->
-        <title>    LIBRARIA  </title>
+        <title>   LIBRARIA  </title>
 
         <!-- Favicon -->
         <link href="{{ asset('images/icon.png') }}" rel="icon" type="image/x-icon" />

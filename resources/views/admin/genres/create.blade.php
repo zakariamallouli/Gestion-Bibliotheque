@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card">
+                    <div class="card mt-5 ">
                         <div class="card-header card-header-info">
                             <h4 class="card-title ">Ajouter Genre</h4>
                            
