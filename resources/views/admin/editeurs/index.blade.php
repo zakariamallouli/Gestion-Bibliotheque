@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <section class="content">
-    <div class="container-fluid">
-    </br></br>
+    <div class="container-fluid mt-5">
         <p>
             <a href="{{ route('home.editeurs.create') }}" class="btn btn-primary">Add New Adherent</a>
         </p>

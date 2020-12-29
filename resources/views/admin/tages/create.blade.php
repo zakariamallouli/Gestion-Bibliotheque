@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="card mt-5 ">
                         <div class="card-header card-header-info">
-                            <h4 class="card-title ">Ajouter Tage</h4>
+                            <h4 class="card-title ">Ajouter Tag</h4>
                            
                         </div>
                         <div class="card-body">
@@ -22,7 +22,7 @@
                                    <br>
                                          
                                        
-                                        <label class="col-md-12" style="text-align: center;">Tage<input type="text" name="tage" class="form-control" required> <br></label>
+                                        <label class="col-md-12" style="text-align: center;">Tag<input type="text" name="tage" class="form-control" required> <br></label>
                                         
                                        
                                       </div>

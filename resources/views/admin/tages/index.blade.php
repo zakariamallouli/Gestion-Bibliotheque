@@ -1,15 +1,15 @@
 @extends('layouts.admin')
 @section('content')
 <section class="content">
-    <div class="container-fluid">
+    <div class="container-fluid mt-5"
     </br></br>
         <p>
-            <a href="{{ route('home.tages.create') }}" class="btn btn-primary">Add New Tage</a>
+            <a href="{{ route('home.tages.create') }}" class="btn btn-primary">Add New Tag</a>
         </p>
         <table class="table table-bordered table-striped">
         <tr>
             <th>ID</th>
-            <th>Tage</th>
+            <th>Tag</th>
             <th><center>Actions</center></th>
         </tr>
         

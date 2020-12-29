@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="card mt-5">
                         <div class="card-header card-header-info">
-                            <h4 class="card-title ">Modifier Tgae</h4>
+                            <h4 class="card-title ">Modifier Tag</h4>
                            
                         </div>
                         <div class="card-body">
@@ -18,7 +18,7 @@
 
                                     <div class="row mt-4">
                                    <br>
-                                        <label class="col-md-12" style="text-align: center;">Tage<input type="text" name="tage" class="form-control" value="{{ $tage->tage }}" required> <br></label>                                     
+                                        <label class="col-md-12" style="text-align: center;">Tag<input type="text" name="tage" class="form-control" value="{{ $tage->tage }}" required> <br></label>                                     
                                       </div>   
                                 </div>
                                    <div class="form-group text-center">
