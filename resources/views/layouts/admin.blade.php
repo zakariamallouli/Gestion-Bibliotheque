@@ -56,9 +56,15 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{route('home.tages.index')}}" class="nav-link" href="examples/map.html">
+                <i class="ni ni-pin-3 text-primary"></i>
+                <span class="nav-link-text">Tage</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{route('home.editeurs.index')}}" class="nav-link" href="examples/profile.html">
                   <i class="ni ni-single-02 text-yellow"></i>
-                  <span class="nav-link-text">Editeur</span>
+                  <span class="nav-link-text">Adherent</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -70,7 +76,7 @@
             <li class="nav-item">
               <a class="nav-link" href="examples/login.html">
                 <i class="ni ni-key-25 text-info"></i>
-                <span class="nav-link-text">Adherent</span>
+                <span class="nav-link-text">Editeur</span>
               </a>
             </li>
            

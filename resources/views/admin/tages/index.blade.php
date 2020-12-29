@@ -4,36 +4,30 @@
     <div class="container-fluid">
     </br></br>
         <p>
-            <a href="{{ route('home.editeurs.create') }}" class="btn btn-primary">Add New Adherent</a>
+            <a href="{{ route('home.tages.create') }}" class="btn btn-primary">Add New Tage</a>
         </p>
         <table class="table table-bordered table-striped">
         <tr>
             <th>ID</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>Email</th>
-            <th>Adresse</th>
-            <th>Tel</th>
-            <th>Actions</th>
+            <th>Tage</th>
+            <th><center>Actions</center></th>
         </tr>
         
-        @foreach($editeurs as $e)
+        @foreach($tages as $t)
         <tr>
-            <td>{{$e->id}}</td>
-            <td>{{$e->nom}}</td>
-            <td>{{$e->prenom}}</td>
-            <td>{{$e->email}}</td>
-            <td>{{$e->adresse}}</td>
-            <td>{{$e->tel}}</td>
+            <td>{{$t->id}}</td>
+            <td>{{$t->tage}}</td>
             <td>
-                <a href=" {{ route('home.editeurs.edit',$e->id
+                <center>
+                <a href=" {{ route('home.tages.edit',$t->id
                     ) }} " class="btn btn-info">Modifier</a>
                 <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
                     class="btn btn-danger">Supprimer</a>
-                    <form method="post" action="{{ route('home.editeurs.destroy',$e->id) }}">
+                    <form method="post" action="{{ route('home.tages.destroy',$t->id) }}">
                         @method('DELETE')
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">   
                     </form>
+                </center>
             </td>
         </tr>
         @endforeach

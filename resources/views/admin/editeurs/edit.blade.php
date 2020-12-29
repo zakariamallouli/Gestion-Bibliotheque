@@ -6,7 +6,7 @@
                 <div class="col-md-12">
                     <div class="card mt-5">
                         <div class="card-header card-header-info">
-                            <h4 class="card-title ">Modifier Auteur</h4>
+                            <h4 class="card-title ">Modifier Adherent</h4>
                            
                         </div>
                         <div class="card-body">
