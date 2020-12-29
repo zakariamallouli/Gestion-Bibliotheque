@@ -42,37 +42,37 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="examples/tables.html">
+                <i class="ni ni-books text-green"></i>
+                <span class="nav-link-text">Livres</span>
+              </a>
+            </li>    
+            <li class="nav-item">
               <a href="{{route('home.auteurs.index')}}" class="nav-link" href="examples/icons.html">
-              
-                <i class="ni ni-planet text-orange"></i>
+                <i class="ni ni-circle-08 text-orange"></i>
                 <span class="nav-link-text">Auteur</span>
-              
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{route('home.adherents.index')}}" class="nav-link" href="examples/profile.html">
+                  <i class="ni ni-satisfied text-yellow"></i>
+                  <span class="nav-link-text">Adherent</span>
+                </a>
+            </li>
+            <li class="nav-item">
               <a href="{{route('home.genres.index')}}" class="nav-link">
-                <i class="ni ni-pin-3 text-primary"></i>
+                <i class="ni ni-folder-17 text-primary"></i>
                 <span class="nav-link-text">Genre</span>
               </a>
             </li>
             <li class="nav-item">
               <a href="{{route('home.tages.index')}}" class="nav-link">
-                <i class="ni ni-pin-3 text-primary"></i>
+                <i class="ni ni-pin-3 text-dark"></i>
                 <span class="nav-link-text">Tags</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="{{route('home.adherents.index')}}" class="nav-link" href="examples/profile.html">
-                  <i class="ni ni-single-02 text-yellow"></i>
-                  <span class="nav-link-text">Adherent</span>
-                </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="examples/tables.html">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Livres</span>
-              </a>
-            </li>           
+            
+                   
           </ul>
           <!-- Divider -->
           <hr class="my-3">

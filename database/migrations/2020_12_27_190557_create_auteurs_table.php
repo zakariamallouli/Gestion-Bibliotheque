@@ -17,9 +17,8 @@ class CreateAuteursTable extends Migration
             $table->id();
             $table->String('nom');
             $table->String('prenom');
-            $table->String('email');
-            $table->String('adresse');
-            $table->integer('tel');
+            $table->String('nationalite');
+            $table->String('biographie');
             $table->timestamps();
         });
     }

@@ -17,45 +17,43 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card mt-5">
-                        <div class="card-header card-header-info">
-                            <h4 class="card-title ">Ajouter Auteur</h4>
-                           
+                    <div class="card mt-5" style="box-shadow: 5px 5px 5px rgb(16, 4, 185);">
+                        <div class="card-header" style="background-color: rgb(88, 119, 223); ">
+                            <h1 style="color: white;">Ajouter Auteur</h1>
                         </div>
                         <div class="card-body">
-                            <div class="table">
                              <form method="post" action="{{ route('home.auteurs.store') }}" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                  
                                  
 
-                                  <div class="form-group">
+                                <div class="form-group">
 
                                     <div class="row mt-4">
-                                   <br>
-                                         
-                                       
-                                        <label class="col-md-4" style="text-align: center;">Nom<input type="text" name="nom" class="form-control" required> <br></label>
-                                        <label class="col-md-4" style="text-align: center;">Prenom<input type="text" name="prenom" class="form-control" required></label><br>
-                                        <label class="col-md-4" style="text-align: center;">Email<input type="text" name="email" class="form-control" required></label><br>
-                                      </div>
+                                        <label class="col-md-4"">Nom<input type="text" name="nom" class="form-control" required> <br></label>
+                                        <label class="col-md-4"">Prenom<input type="text" name="prenom" class="form-control" required></label><br>
+                                        <label class="col-md-4" for="nationalite">Nationalité
+                                            <select class="form-control" name="nationalite" id="nationalite">
+                                              <option value="France">France</option>
+                                              <option value="Maroc">Maroc</option>
+                                              <option value="Egypt">Egypt</option>
+                                              <option value="England">England</option>
+                                              <option value="Espagne">Espagne</option>
+                                              <option value="Algerie">Algerie</option>
+                                              <option value="Belgique">Belgique</option>
+                                            </select>
+                                        </label>
+                                    </div>
 
-                                      <div class="row mt-3">
-                                        
-                                        <label class="col-md-6" style="text-align: center;">Adresse<input type="text" name="adresse" class="form-control" required></label><br>
-                                        <label class="col-md-6" style="text-align: center;">Telephone<input type="text" name="tel" class="form-control" required></label><br>
-                                      </div>
-
-                                     
+                                    <div class="row">
+                                        <label class="col-md-12" for="bio">Biographie
+                                        <textarea class="form-control" name="biographie" id="bio" rows="5"></textarea></label>
+                                    </div>
                                 </div>
-
-                                
                                    <div class="form-group text-center">
                                       <input type="submit" class="btn btn-info" value="Ajouter">
                                   </div>
                               </form>
-                             
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -69,7 +69,7 @@
                                                         <i class="fa fa-user"></i>{{ Auth::user()->name }}
                                                     </a>
                                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                        <a class="dropdown-item" style="color: black; margin-left: 70px;" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
                                                                <i class="fa fa-lock"></i> {{ __('Logout') }}

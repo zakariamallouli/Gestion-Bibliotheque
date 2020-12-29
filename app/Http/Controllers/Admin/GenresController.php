@@ -41,7 +41,6 @@ class GenresController extends Controller
     public function store(Request $request,  Genre $genre)
     {
         $genre->genre = $request->genre;
-        $genre->description = $request->description;
         $genre->save();
         return redirect('home/genres');
     }
@@ -79,7 +78,6 @@ class GenresController extends Controller
     public function update(Request $request, Genre $genre)
     {
         $genre->genre = $request->genre;
-        $genre->description = $request->description;
         $genre->save();
         return redirect()->route('home.genres.index');
     }

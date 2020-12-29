@@ -42,9 +42,8 @@ class AuteursController extends Controller
     {
         $auteur->nom = $request->nom;
         $auteur->prenom = $request->prenom;
-        $auteur->email = $request->email;
-        $auteur->adresse = $request->adresse;
-        $auteur->tel = $request->tel;
+        $auteur->nationalite = $request->nationalite;
+        $auteur->biographie = $request->biographie;
         $auteur->save();
         if($auteur->save())
             return redirect('home/auteurs')->with("success","Enregistrement Ajouté avec Succés");
@@ -86,9 +85,8 @@ class AuteursController extends Controller
     {
         $auteur->nom = $request->nom;
         $auteur->prenom = $request->prenom;
-        $auteur->email = $request->email;
-        $auteur->adresse = $request->adresse;
-        $auteur->tel = $request->tel;
+        $auteur->nationalite = $request->nationalite;
+        $auteur->biographie = $request->biographie;
         $auteur->save();
         if($auteur->save())
             return redirect('home/auteurs')->with("success","Enregistrement Modifié avec Succés");

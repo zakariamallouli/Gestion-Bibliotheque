@@ -4,10 +4,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card mt-5">
-                        <div class="card-header card-header-info">
-                            <h4 class="card-title ">Modifier Genre</h4>
-                           
+                    <div class="card mt-5" style="box-shadow: 5px 5px 5px rgb(35, 28, 134);">
+                        <div class="card-header" style="background-color: rgb(88, 119, 223); ">
+                            <h1 style="color: white;">Modifier Genre</h1>
                         </div>
                         <div class="card-body">
                             <div class="table">
@@ -18,9 +17,8 @@
 
                                     <div class="row mt-4">
                                    <br>
-                                        <label class="col-md-6" style="text-align: center;">Genre<input type="text" name="genre" class="form-control" value="{{ $genre->genre }}" required> <br></label>
-                                        <label class="col-md-6" style="text-align: center;">Description<input type="text" name="description" class="form-control" value="{{ $genre->description }}" required></label><br>                                       
-                                      </div>   
+                                        <label class="col-md-12" style="text-align: center;">Genre<input type="text" name="genre" class="form-control" value="{{ $genre->genre }}" required> <br></label>
+                                        </div>   
                                 </div>
                                    <div class="form-group text-center">
                                       <input type="submit" class="btn btn-info" value="Modifier">

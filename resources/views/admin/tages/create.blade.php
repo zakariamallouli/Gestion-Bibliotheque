@@ -4,10 +4,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card mt-5 ">
-                        <div class="card-header card-header-info">
-                            <h4 class="card-title ">Ajouter Tag</h4>
-                           
+                    <div class="card mt-5" style="box-shadow: 5px 5px 5px rgb(35, 28, 134);">
+                        <div class="card-header" style="background-color: rgb(88, 119, 223); ">
+                            <h1 style="color: white;">Ajouter Tag</h1>
                         </div>
                         <div class="card-body">
                             <div class="table">
