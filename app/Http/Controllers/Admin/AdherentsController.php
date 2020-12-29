@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Editeur;
+use App\Adherent;
 
-class EditeursController extends Controller
+class AdherentsController extends Controller
 {
     public function __construct() {
         $this->middleware('auth');
@@ -18,8 +18,8 @@ class EditeursController extends Controller
      */
     public function index()
     {
-        $arr['editeurs'] = Editeur::all();
-        return view('admin.editeurs.index')->with($arr);
+        $arr['adherents'] = Adherent::all();
+        return view('admin.adherents.index')->with($arr);
     }
 
     /**
@@ -29,7 +29,7 @@ class EditeursController extends Controller
      */
     public function create()
     {
-        return view('admin.editeurs.create');
+        return view('admin.adherents.create');
     }
 
     /**
@@ -38,15 +38,16 @@ class EditeursController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,  Editeur $editeur)
+    public function store(Request $request,  Adherents $adherent)
     {
-        $editeur->nom = $request->nom;
-        $editeur->prenom = $request->prenom;
-        $editeur->email = $request->email;
-        $editeur->adresse = $request->adresse;
-        $editeur->tel = $request->tel;
-        $editeur->save();
-        return redirect('home/editeurs');
+        $adherent->nom = $request->nom;
+        $adherent->prenom = $request->prenom;
+        $adherent->cin = $request->cin;
+        $adherent->email = $request->email;
+        $adherent->adresse = $request->adresse;
+        $adherent->tel = $request->tel;
+        $adherent->save();
+        return redirect('home/adherents');
     }
 
     /**
@@ -66,10 +67,10 @@ class EditeursController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Editeur $editeur)
+    public function edit(Adherent $adherent)
     {
-        $arr['editeur'] = $editeur;
-        return view('admin.editeurs.edit')->with($arr);
+        $arr['adherent'] = $adherent;
+        return view('admin.adherents.edit')->with($arr);
     }
 
     /**
@@ -79,15 +80,16 @@ class EditeursController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Editeur $editeur)
+    public function update(Request $request, Adherent $adherent)
     {
-        $editeur->nom = $request->nom;
-        $editeur->prenom = $request->prenom;
-        $editeur->email = $request->email;
-        $editeur->adresse = $request->adresse;
-        $editeur->tel = $request->tel;
-        $editeur->save();
-        return redirect()->route('home.editeurs.index');
+        $adherent->nom = $request->nom;
+        $adherent->prenom = $request->prenom;
+        $adherent->cin = $request->cin;
+        $adherent->email = $request->email;
+        $adherent->adresse = $request->adresse;
+        $adherent->tel = $request->tel;
+        $adherent->save();
+        return redirect()->route('home.adherents.index');
     }
     
 
@@ -100,7 +102,7 @@ class EditeursController extends Controller
 
     public function destroy($id)
     {
-        Editeur::destroy($id);
-        return redirect()->route('home.editeurs.index');
+        Adherent::destroy($id);
+        return redirect()->route('home.adherents.index');
     }
 }

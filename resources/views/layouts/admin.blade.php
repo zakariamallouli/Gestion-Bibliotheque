@@ -50,19 +50,19 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('home.genres.index')}}" class="nav-link" href="examples/map.html">
+              <a href="{{route('home.genres.index')}}" class="nav-link">
                 <i class="ni ni-pin-3 text-primary"></i>
                 <span class="nav-link-text">Genre</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('home.tages.index')}}" class="nav-link" href="examples/map.html">
+              <a href="{{route('home.tages.index')}}" class="nav-link">
                 <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Tage</span>
+                <span class="nav-link-text">Tags</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('home.editeurs.index')}}" class="nav-link" href="examples/profile.html">
+              <a href="{{route('home.adherents.index')}}" class="nav-link" href="examples/profile.html">
                   <i class="ni ni-single-02 text-yellow"></i>
                   <span class="nav-link-text">Adherent</span>
                 </a>
@@ -72,14 +72,7 @@
                 <i class="ni ni-bullet-list-67 text-default"></i>
                 <span class="nav-link-text">Livres</span>
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="examples/login.html">
-                <i class="ni ni-key-25 text-info"></i>
-                <span class="nav-link-text">Editeur</span>
-              </a>
-            </li>
-           
+            </li>           
           </ul>
           <!-- Divider -->
           <hr class="my-3">

@@ -11,7 +11,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table">
-                             <form method="post" action="{{ route('home.editeurs.store') }}" enctype="multipart/form-data">
+                             <form method="post" action="{{ route('home.adherents.store') }}" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                  
                                  
@@ -24,11 +24,11 @@
                                        
                                         <label class="col-md-4" style="text-align: center;">Nom<input type="text" name="nom" class="form-control" required> <br></label>
                                         <label class="col-md-4" style="text-align: center;">Prenom<input type="text" name="prenom" class="form-control" required></label><br>
-                                        <label class="col-md-4" style="text-align: center;">Email<input type="text" name="email" class="form-control" required></label><br>
+                                        <label class="col-md-4" style="text-align: center;">Cin<input type="text" name="cin" class="form-control" required></label><br>
                                       </div>
 
                                       <div class="row mt-3">
-                                        
+                                        <label class="col-md-4" style="text-align: center;">Email<input type="text" name="email" class="form-control" required></label><br>
                                         <label class="col-md-6" style="text-align: center;">Adresse<input type="text" name="adresse" class="form-control" required></label><br>
                                         <label class="col-md-6" style="text-align: center;">Telephone<input type="text" name="tel" class="form-control" required></label><br>
                                       </div>

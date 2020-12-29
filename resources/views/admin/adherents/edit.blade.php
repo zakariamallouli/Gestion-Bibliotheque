@@ -11,7 +11,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table">
-                             <form method="post" action="{{ route('home.editeurs.update',$editeur->id) }}" enctype="multipart/form-data">
+                             <form method="post" action="{{ route('home.adherents.update',$adherent->id) }}" enctype="multipart/form-data">
                              @method('PUT')   
                              <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                  
@@ -23,15 +23,15 @@
                                    <br>
                                          
                                        
-                                        <label class="col-md-4" style="text-align: center;">Nom<input type="text" name="nom" class="form-control" value="{{ $editeur->nom }}" required> <br></label>
-                                        <label class="col-md-4" style="text-align: center;">Prenom<input type="text" name="prenom" class="form-control" value="{{ $editeur->prenom }}" required></label><br>
-                                        <label class="col-md-4" style="text-align: center;">Email<input type="text" name="email" class="form-control" value="{{ $editeur->email }}" required></label><br>
+                                        <label class="col-md-4" style="text-align: center;">Nom<input type="text" name="nom" class="form-control" value="{{ $adherent->nom }}" required> <br></label>
+                                        <label class="col-md-4" style="text-align: center;">Prenom<input type="text" name="prenom" class="form-control" value="{{ $adherent->prenom }}" required></label><br>
+                                        <label class="col-md-4" style="text-align: center;">Cin<input type="text" name="cin" class="form-control" value="{{ $adherent->cin }}" required></label><br>
                                       </div>
 
                                       <div class="row mt-3">
-                                        
-                                        <label class="col-md-6" style="text-align: center;">Adresse<input type="text" name="adresse" class="form-control" value="{{ $editeur->adresse }}" required></label><br>
-                                        <label class="col-md-6" style="text-align: center;">Telephone<input type="text" name="tel" class="form-control" value="{{ $editeur->tel }}" required></label><br>
+                                        <label class="col-md-4" style="text-align: center;">Email<input type="text" name="email" class="form-control" value="{{ $adherent->email }}" required></label><br>
+                                        <label class="col-md-6" style="text-align: center;">Adresse<input type="text" name="adresse" class="form-control" value="{{ $adherent->adresse }}" required></label><br>
+                                        <label class="col-md-6" style="text-align: center;">Telephone<input type="text" name="tel" class="form-control" value="{{ $adherent->tel }}" required></label><br>
                                       </div>
 
                                      
