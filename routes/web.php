@@ -23,7 +23,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 Route::get('/admin/dashboard', 'HomeController@index')->name('dashboard');
 Route::resource('/home/auteurs' , 'Admin\AuteursController', ['as'=>'home']);
-Route::resource('/home/adherents' , 'Admin\UsersController', ['as'=>'home']);
+Route::resource('/home/users' , 'Admin\UsersController', ['as'=>'home']);
 Route::resource('/home/genres' , 'Admin\GenresController', ['as'=>'home']);
 Route::resource('/home/tages' , 'Admin\TagesController', ['as'=>'home']);
 Route::resource('/home/livres' , 'Admin\LivresController', ['as'=>'home']);

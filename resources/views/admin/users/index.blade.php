@@ -2,10 +2,32 @@
 @section('content')
 <section class="content">
     <div class="container-fluid mt-5">
-        <p>
-            <a href="{{ route('home.adherents.create') }}" class="btn btn-primary" aria-disabled="true"><i class="ni ni-fat-add"></i>  Nouveau Adherent</a>
-        </p>
         
+      <div class="row">
+        <div class="col-md-12">
+            @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @if(session()->has('error'))
+            <div class="alert alert-danger">
+                {{ session()->get('error') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+        </div>
+    </div>
             <!-- Dark table -->
 <div class="row">
     <div class="col">
@@ -13,14 +35,15 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-white mb-0">Liste des Adherents</h3>
         </div>
-        <div class="table-responsive">
-          <table class="table align-items-center table-dark table-flush">
-            <thead class="thead-dark">
+        <div class="table-responsive text-center">
+          <table class="table align-items-center table-light table-flush">
+            <thead class="thead-light">
               <tr>
                 <th scope="col">Id</th>
                 <th scope="col">CIN</th>
                 <th scope="col">Nom</th>
                 <th scope="col">Email</th>
+                <th scope="col">Email_Verifié</th>
                 <th scope="col">Telephone</th>
                 <th scope="col">Action</th>
               </tr>
@@ -42,13 +65,22 @@
                     {{$a->email}}
                 </td>
                 <td>
-                    {{$a->tel}}
-                </td>
+                  @if($a->email_verified_at == null)
+                    {{ 'NON' }}
+                  @else
+                  {{ 'OUI' }}
+                  @endif
+              </td>
+              
+              <td>
+                {{$a->tel}}
+            </td>
+                
                 <td>
-                    <a href=" {{ route('home.auteurs.edit',$a->id) }} " class="btn btn-info">Modifier</a>
+                    <a href=" {{ route('home.users.edit',$a->id) }} " class="btn btn-info">Modifier</a>
                     <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
                         class="btn btn-danger">Supprimer</a>
-                        <form method="post" action="{{ route('home.auteurs.destroy',$a->id) }}">
+                        <form method="post" action="{{ route('home.users.destroy',$a->id) }}">
                             @method('DELETE')
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">   
                         </form>

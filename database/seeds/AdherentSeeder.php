@@ -15,54 +15,26 @@ class AdherentSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
+                'name' => Str::random(5).' '.Str::random(4),
+                'email' => Str::random(6).'@gmail.com',
                 'cin' => 'EE45894',
-                'adresse' => Str::random(20),
+                'adresse' => Str::random(12),
                 'tel' => '0612457896',
+                'password' =>  Hash::make('password'),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
+                'name' => Str::random(5).' '.Str::random(4),
+                'email' => Str::random(6).'@gmail.com',
                 'cin' => 'AG56987',
-                'adresse' => Str::random(20),
+                'adresse' => Str::random(12),
                 'tel' => '0612741296',
+                'password' =>  Hash::make('password'),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
+                'name' => Str::random(5).' '.Str::random(4),
+                'email' => Str::random(6).'@gmail.com',
                 'cin' => 'KL78954',
-                'adresse' => Str::random(20),
+                'adresse' => Str::random(12),
                 'tel' => '0632145879',
-            ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
-                'cin' => 'BA14256',
-                'adresse' => Str::random(20),
-                'tel' => '0723457874',
-            ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
-                'cin' => 'AR78494',
-                'adresse' => Str::random(20),
-                'tel' => '0714988996',
-            ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
-                'cin' => 'BR63254',
-                'adresse' => Str::random(20),
-                'tel' => '0759865896',
-            ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'email' => Str::random(10).'@gmail.com',
-                'cin' => 'EA98745',
-                'adresse' => Str::random(20),
-                'tel' => '0754873205',
+                'password' =>  Hash::make('password'),
             ]
         ]);
     }

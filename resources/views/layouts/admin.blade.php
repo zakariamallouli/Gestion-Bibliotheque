@@ -54,9 +54,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('home.adherents.index')}}" class="nav-link" href="examples/profile.html">
+              <a href="{{route('home.users.index')}}" class="nav-link" href="examples/profile.html">
                   <i class="ni ni-satisfied text-yellow"></i>
-                  <span class="nav-link-text">Adherent</span>
+                  <span class="nav-link-text">Adhérent</span>
                 </a>
             </li>
             <li class="nav-item">

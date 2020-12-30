@@ -28,7 +28,7 @@
             </div>
         </div>
         <p>
-            <a href="{{ route('home.auteurs.create') }}" class="btn btn-primary"><i class="ni ni-fat-add"></i> Auteur</a>
+            <a href="{{ route('home.auteurs.create') }}" class="btn btn-primary"><i class="ni ni-fat-add"></i> Nouveau Auteur</a>
         </p>
 
         <!-- Dark table -->

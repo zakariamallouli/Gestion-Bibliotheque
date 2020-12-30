@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <section class="content">
-    <div class="container-fluid mt-5"
-    </br></br>
+    <div class="container-fluid mt-5">
         <p>
             <a href="{{ route('home.tages.create') }}" class="btn btn-primary"><i class="ni ni-fat-add"></i>Nouveau Tag</a>
         </p>

@@ -92,7 +92,6 @@ class AuteursController extends Controller
             return redirect('home/auteurs')->with("success","Enregistrement Modifié avec Succés");
         else
             return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");
-        return redirect()->route('home.auteurs.index');
     }
     
 
