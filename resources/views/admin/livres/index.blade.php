@@ -43,9 +43,10 @@
             <thead class="thead-light">
               <tr>
                 <th scope="col">Id</th>
+                <th scope="col">Image</th>
                 <th scope="col">Titre</th>
                 <th scope="col">Auteur</th>
-                <th scope="col">Tag</th>
+                <th scope="col">Langue</th>
                 <th scope="col">Genre</th>
                 <th scope="col">Action</th>
               </tr>
