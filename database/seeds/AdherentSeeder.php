@@ -13,7 +13,7 @@ class AdherentSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('adherents')->insert([
+        DB::table('users')->insert([
             [
                 'nom' => Str::random(10),
                 'prenom' => Str::random(10),

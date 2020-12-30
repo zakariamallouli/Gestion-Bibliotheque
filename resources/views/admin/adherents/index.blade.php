@@ -3,7 +3,7 @@
 <section class="content">
     <div class="container-fluid mt-5">
         <p>
-            <a href="{{ route('home.adherents.create') }}" class="btn btn-primary"><i class="ni ni-fat-add"></i>  Nouveau Adherent</a>
+            <a href="{{ route('home.adherents.create') }}" class="btn btn-primary" aria-disabled="true"><i class="ni ni-fat-add"></i>  Nouveau Adherent</a>
         </p>
         
             <!-- Dark table -->
@@ -20,14 +20,13 @@
                 <th scope="col">Id</th>
                 <th scope="col">CIN</th>
                 <th scope="col">Nom</th>
-                <th scope="col">Prenom</th>
                 <th scope="col">Email</th>
                 <th scope="col">Telephone</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody class="list">
-                @foreach($adherents as $a)
+                @foreach($users as $a)
               <tr>
                 <th scope="row">
                     <i class="bg-warning"></i>
@@ -37,10 +36,7 @@
                     {{$a->cin}}
                 </td>
                 <td>
-                    {{$a->nom}}
-                </td>
-                <td>
-                    {{$a->prenom}}
+                    {{$a->name}}
                 </td>
                 <td>
                     {{$a->email}}
