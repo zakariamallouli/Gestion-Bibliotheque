@@ -15,54 +15,44 @@ class AuteurSeeder extends Seeder
     {
         DB::table('auteurs')->insert([
             [
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'zakaria',
+                'prenom' => 'mallouli',
                 'nationalite' => 'France',
                 'biographie' => Str::random(70),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'marouane',
+                'prenom' => 'ettaki',
                 'nationalite' => 'Maroc',
                 'biographie' => Str::random(70),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'anass',
+                'prenom' => 'soukant',
                 'nationalite' => 'Belgique',
                 'biographie' => Str::random(70),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'wail',
+                'prenom' => 'naceur',
                 'nationalite' => 'Maroc',
                 'biographie' => Str::random(70),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'hamza',
+                'prenom' => 'mallouli',
                 'nationalite' => 'France',
                 'biographie' => Str::random(70),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'yahya',
+                'prenom' => 'ettaki',
                 'nationalite' => 'Egypt',
                 'biographie' => Str::random(70),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'wassim',
+                'prenom' => 'najeh',
                 'nationalite' => 'France',
                 'biographie' => Str::random(70),
             ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
+                'nom' => 'abdo',
+                'prenom' => 'track',
                 'nationalite' => 'Algerie',
-                'biographie' => Str::random(70),
-            ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'nationalite' => 'Maroc',
-                'biographie' => Str::random(70),
-            ],[
-                'nom' => Str::random(10),
-                'prenom' => Str::random(10),
-                'nationalite' => 'Egypt',
                 'biographie' => Str::random(70),
             ]
         ]);
