@@ -67,7 +67,7 @@
             </li>
             <li class="nav-item">
               <a href="{{route('home.tages.index')}}" class="nav-link">
-                <i class="ni ni-pin-3 text-dark"></i>
+                <i class="ni ni-tag text-dark"></i>
                 <span class="nav-link-text">Tags</span>
               </a>
             </li>

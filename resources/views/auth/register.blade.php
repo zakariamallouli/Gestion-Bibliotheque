@@ -63,6 +63,34 @@
                   <div class="form-group">
                     <div class="input-group input-group-merge input-group-alternative">
                       <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-pin-3"></i></span>
+                      </div>
+                      <input type="text" placeholder="Adresse" class="form-control @error('adresse') is-invalid @enderror" name="adresse" required>
+
+                        @error('adresse')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                  </div>
+                    <div class="form-group">
+                      <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-check-bold"></i></span>
+                        </div>
+                        <input type="text" placeholder="Téléphone" class="form-control @error('tel') is-invalid @enderror" name="tel" required>
+  
+                          @error('tel')
+                              <span class="invalid-feedback" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                      </div>
+                    </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                       </div>
                       <input id="password" type="password" placeholder="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
