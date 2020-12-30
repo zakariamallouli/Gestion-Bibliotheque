@@ -26,5 +26,6 @@ Route::resource('/home/auteurs' , 'Admin\AuteursController', ['as'=>'home']);
 Route::resource('/home/adherents' , 'Admin\AdherentsController', ['as'=>'home']);
 Route::resource('/home/genres' , 'Admin\GenresController', ['as'=>'home']);
 Route::resource('/home/tages' , 'Admin\TagesController', ['as'=>'home']);
+Route::resource('/home/livres' , 'Admin\LivresController', ['as'=>'home']);
 
 /******************************************Admin Routes******************************************/

@@ -42,7 +42,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="examples/tables.html">
+              <a  href="{{route('home.livres.index')}}" class="nav-link" href="examples/tables.html">
                 <i class="ni ni-books text-green"></i>
                 <span class="nav-link-text">Livres</span>
               </a>
