@@ -14,7 +14,7 @@ class CreateTagesTable extends Migration
     public function up()
     {
         Schema::create('tages', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->String('tage');
             $table->timestamps();
         });

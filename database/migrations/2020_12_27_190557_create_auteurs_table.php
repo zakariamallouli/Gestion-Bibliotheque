@@ -14,7 +14,7 @@ class CreateAuteursTable extends Migration
     public function up()
     {
         Schema::create('auteurs', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->String('nom');
             $table->String('prenom');
             $table->String('nationalite');
