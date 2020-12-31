@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Livre;
+use App\Auteur;
+use App\Tage;
+use App\Genre;
 
 class LivresController extends Controller
 {
@@ -29,7 +32,10 @@ class LivresController extends Controller
      */
     public function create()
     {
-        return view('admin.livres.create');
+        $arr['auteurs'] = Auteur::all();
+        $arr['genres'] = Genre::all();
+        $arr['tags'] = Tage::all();
+        return view('admin.livres.create')->with($arr);
     }
 
     /**

@@ -28,7 +28,7 @@
             </div>
         </div>
         <p>
-            <a href="{{ route('home.livres.create') }}" class="btn btn-primary"><i class="ni ni-fat-add"></i> Livre</a>
+            <a href="{{ route('home.livres.create') }}" class="btn btn-primary"><i class="ni ni-fat-add"></i>Nouveau Livre</a>
         </p>
 
         <!-- Dark table -->
@@ -47,16 +47,40 @@
                 <th scope="col">Titre</th>
                 <th scope="col">Auteur</th>
                 <th scope="col">Langue</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Prix</th>
                 <th scope="col">Genre</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody class="list">
-            <td>
-                       
-        
-                </td>
-            </tbody>
+              @foreach($livres as $a)
+            <tr>
+              <th scope="row">
+                  <i class="bg-warning"></i>
+                {{$a->id}}
+              </th>
+              <td class="budget">
+                  {{$a->nom}}
+              </td>
+              <td>
+                  {{$a->prenom}}
+              </td>
+              <td>
+                  {{$a->nationalite}}
+              </td>
+              <td>
+                  <a href=" {{ route('home.auteurs.edit',$a->id) }} " class="btn btn-info btn-sm">Modifier</a>
+                  <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
+                      class="btn btn-danger btn-sm">Supprimer</a>
+                      <form method="post" action="{{ route('home.auteurs.destroy',$a->id) }}">
+                          @method('DELETE')
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">   
+                      </form>
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
           </table>
         </div>
       </div>

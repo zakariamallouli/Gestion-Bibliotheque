@@ -43,7 +43,10 @@ class TagesController extends Controller
     {
         $tage->tage = $request->tage;
         $tage->save();
-        return redirect('home/tages');
+        if($tage->save())
+            return redirect('home/tages')->with("success","Enregistrement Ajouté avec Succés");
+        else
+            return back()->with("error","Enregistrement n'a pas été ajouté, Ressayez");
     }
 
     /**
@@ -80,7 +83,10 @@ class TagesController extends Controller
     {
         $tage->tage = $request->tage;
         $tage->save();
-        return redirect()->route('home.tages.index');
+        if($tage->save())
+            return redirect('home/tages')->with("success","Enregistrement Ajouté avec Succés");
+        else
+            return back()->with("error","Enregistrement n'a pas été ajouté, Ressayez");
     }
 
     /**
@@ -92,6 +98,6 @@ class TagesController extends Controller
     public function destroy($id)
     {
         Tage::destroy($id);
-        return redirect()->route('home.tages.index'); 
+        return redirect()->route('home.tages.index')>with("success","Enregistrement Supprimé avec Succés");
     }
 }

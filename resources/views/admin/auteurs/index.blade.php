@@ -66,9 +66,9 @@
                     {{$a->nationalite}}
                 </td>
                 <td>
-                    <a href=" {{ route('home.auteurs.edit',$a->id) }} " class="btn btn-info">Modifier</a>
+                    <a href=" {{ route('home.auteurs.edit',$a->id) }} " class="btn btn-info btn-sm">Modifier</a>
                     <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
-                        class="btn btn-danger">Supprimer</a>
+                        class="btn btn-danger btn-sm">Supprimer</a>
                         <form method="post" action="{{ route('home.auteurs.destroy',$a->id) }}">
                             @method('DELETE')
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">   

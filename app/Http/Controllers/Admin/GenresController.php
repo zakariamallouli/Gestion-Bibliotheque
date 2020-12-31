@@ -42,7 +42,10 @@ class GenresController extends Controller
     {
         $genre->genre = $request->genre;
         $genre->save();
-        return redirect('home/genres');
+        if($genre->save())
+            return redirect('home/genres')->with("success","Enregistrement Ajouté avec Succés");
+        else
+            return back()->with("error","Enregistrement n'a pas été ajouté, Ressayez");
     }
 
     /**
@@ -79,7 +82,10 @@ class GenresController extends Controller
     {
         $genre->genre = $request->genre;
         $genre->save();
-        return redirect()->route('home.genres.index');
+        if($genre->save())
+            return redirect('home/genres')->with("success","Enregistrement Ajouté avec Succés");
+        else
+            return back()->with("error","Enregistrement n'a pas été ajouté, Ressayez");
     }
     
 
@@ -93,6 +99,6 @@ class GenresController extends Controller
     public function destroy($id)
     {
         Genre::destroy($id);
-        return redirect()->route('home.genres.index');
+        return redirect()->route('home.genres.index')->with("success","Enregistrement Supprimé avec Succés");
     }
 }
