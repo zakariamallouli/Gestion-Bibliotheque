@@ -14,7 +14,7 @@ class CreateLivresTable extends Migration
     public function up()
     {
         Schema::create('livres', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->String('titre');
             $table->String('image');
             $table->String('langue');
@@ -22,14 +22,14 @@ class CreateLivresTable extends Migration
             $table->double('prix');
             $table->String('resume');
             // foreign genre
-            $table->integer('genre_id')->unsigned();
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->integer('idgenre')->unsigned();
+            $table->foreign('idgenre')->references('id')->on('genres')->onDelete('cascade');
             // foreign Tag
-            $table->integer('tags_id')->unsigned();
-            $table->foreign('tags_id')->references('id')->on('tags');
+            $table->integer('idtag')->unsigned();
+            $table->foreign('idtag')->references('id')->on('tages')->onDelete('cascade');
             // foreign Auteur
-            $table->integer('auteur_id')->unsigned();
-            $table->foreign('auteur_id')->references('id')->on('auteurs');
+            $table->integer('idauteur')->unsigned();
+            $table->foreign('idauteur')->references('id')->on('auteurs')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -41,6 +41,11 @@ class CreateLivresTable extends Migration
      */
     public function down()
     {
+        Schema::table('livres', function (Blueprint $table) {
+            $table->dropForeign(['idgenre']);
+            $table->dropForeign(['idauteur']);
+            $table->dropForeign(['idtag']);
+        });
         Schema::dropIfExists('livres');
     }
 }
