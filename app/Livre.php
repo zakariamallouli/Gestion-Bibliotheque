@@ -1,9 +1,9 @@
 <?php
 
 namespace App;
-use Auteur;
-use Genre;
-use Tage;
+use App\Auteur;
+use App\Genre;
+use App\Tage;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,16 +11,16 @@ class Livre extends Model
 {
     public function auteur()
     {
-        return $this->belongsTo(Auteur::class);
+        return $this->belongsTo(Auteur::class, 'idauteur');
     }
 
     public function genre()
     {
-        return $this->belongsTo(Genre::class);
+        return $this->belongsTo(Genre::class, 'idgenre');
     }
 
     public function tags()
     {
-        return $this->hasMany(Tage::class);
+        return $this->hasMany(Tage::class, 'idtag');
     }
 }

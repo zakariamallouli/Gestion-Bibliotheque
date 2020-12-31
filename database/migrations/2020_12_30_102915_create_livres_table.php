@@ -20,16 +20,16 @@ class CreateLivresTable extends Migration
             $table->String('langue');
             $table->integer('qte');
             $table->double('prix');
-            $table->String('resume');
+            // foreign Auteur
+            $table->integer('idauteur')->unsigned();
+            $table->foreign('idauteur')->references('id')->on('auteurs')->onDelete('cascade');
             // foreign genre
             $table->integer('idgenre')->unsigned();
             $table->foreign('idgenre')->references('id')->on('genres')->onDelete('cascade');
             // foreign Tag
             $table->integer('idtag')->unsigned();
             $table->foreign('idtag')->references('id')->on('tages')->onDelete('cascade');
-            // foreign Auteur
-            $table->integer('idauteur')->unsigned();
-            $table->foreign('idauteur')->references('id')->on('auteurs')->onDelete('cascade');
+            $table->String('resume');            
             $table->timestamps();
         });
     }
