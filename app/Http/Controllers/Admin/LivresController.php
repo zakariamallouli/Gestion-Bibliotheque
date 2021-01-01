@@ -87,9 +87,13 @@ class LivresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Livre $livre)
     {
-        //
+        $arr['auteurs'] = Auteur::all();
+        $arr['genres'] = Genre::all();
+        $arr['tags'] = Tage::all();
+        $arr['livres'] = $livre;
+        return view('admin.livres.edit')->with($arr);
     }
 
     /**
@@ -99,9 +103,34 @@ class LivresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Livre $livre)
     {
-        //
+        if(isset($request->image) && $request->image->getClientOriginalName()){
+            $ext = $request->image->getClientOriginalExtension();
+            $file = date('YmdHis').rand(1,99999).'.'.$ext;
+            $request->image->move(public_path("images"),$file);
+
+        }else{
+
+            if(!$livre->image)
+                $file = '';
+            else
+            $file = $livre->image;
+
+        }
+            $livre->image = $file;
+            $livre->titre = $request->titre;
+            $livre->qte = $request->qte;
+            $livre->prix = $request->prix;
+            $livre->idauteur = $request->idauteur;
+            $livre->idgenre = $request->idgenre;
+            $livre->idtag = $request->idtag;
+            $livre->resume = $request->resume;
+            $livre->langue = $request->langue;
+            if($livre->save())
+                return  redirect('home/livres')->with("success","Enregistrement Modifié avec Succés");
+            else
+                return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");
     }
 
     /**

@@ -31,8 +31,7 @@
                                     <div class="row "> 
                                         <label class="col-md-6 mx-auto">Image de Couverture
                                             <input type="file" name="image" class="form-control" required>
-                                        </label>
-                                        
+                                        </label> 
                                     </div>
 
                                     <div class="row mt-3"> 
