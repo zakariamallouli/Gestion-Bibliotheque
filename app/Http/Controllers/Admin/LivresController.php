@@ -44,9 +44,30 @@ class LivresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Livre $livre)
     {
-        //
+        if($request->image->getClientOriginalName()){
+            $ext = $request->image->getClientOriginalExtension();
+            $file = date('YmdHis').rand(1,99999).'.'.$ext;
+            //$filename->move('public/produits,$file');
+            //$produit->image = $file;
+            $request->image->move(public_path("images"),$file);
+        }else{
+            $file='';
+        }
+            $livre->image = $file;
+            $livre->titre = $request->titre;
+            $livre->qte = $request->qte;
+            $livre->prix = $request->prix;
+            $livre->idauteur = $request->idauteur;
+            $livre->idgenre = $request->idgenre;
+            $livre->idtag = $request->idtag;
+            $livre->resume = $request->resume;
+            $livre->langue = $request->langue;
+            if($livre->save())
+                return redirect('home/livres')->with("success","Enregistrement Modifié avec Succés");
+            else
+                return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");
     }
 
     /**
@@ -91,6 +112,7 @@ class LivresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Livre::destroy($id);
+        return redirect()->route('home.livres.index')->with("success","Enregistrement Supprimé avec Succés");
     }
 }

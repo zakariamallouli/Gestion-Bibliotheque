@@ -1,6 +1,16 @@
 @extends('layouts.admin')
 @section('content')
 <section class="content">
+  <style type="text/css">
+    .cart-item-image {
+        width: 40px;
+        height: 50px;
+        border-radius: 5%;
+        border: #E0E0E0 1px solid;
+        vertical-align: middle;
+        margin-right: 15px;
+    }
+</style>
     <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -45,10 +55,10 @@
                 <th scope="col">Id</th>
                 <th scope="col">Image</th>
                 <th scope="col">Titre</th>
-                <th scope="col">Auteur</th>
                 <th scope="col">Langue</th>
                 <th scope="col">Quantité</th>
                 <th scope="col">Prix</th>
+                <th scope="col">Auteur</th>
                 <th scope="col">Genre</th>
                 <th scope="col">Action</th>
               </tr>
@@ -92,6 +102,31 @@
                   <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
                       class="btn btn-danger btn-sm">Supprimer</a>
                       <form method="post" action="{{ route('home.livres.destroy',$l->id) }}">
+                  <img class="cart-item-image" src="{{asset('images/'.$a->image)}}" alt="">
+              </td>
+              <td>
+                  {{$a->titre}}
+              </td>
+              <td>
+                  {{$a->langue}}
+              </td>              
+              <td>
+                {{$a->qte}}
+            </td>
+            <td>
+                {{$a->prix}} DH
+            </td>
+            <td>
+                {{$a->auteur['nom']}}
+            </td>
+            <td>
+              {{$a->genre['genre']}}
+          </td>
+              <td>
+                  <a href=" {{ route('home.livres.edit',$a->id) }} " class="btn btn-info btn-sm">Modifier</a>
+                  <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
+                      class="btn btn-danger btn-sm">Supprimer</a>
+                      <form method="post" action="{{ route('home.livres.destroy',$a->id) }}">
                           @method('DELETE')
                           <input type="hidden" name="_token" value="{{ csrf_token() }}">   
                       </form>
