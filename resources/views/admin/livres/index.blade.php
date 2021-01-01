@@ -64,44 +64,13 @@
               </tr>
             </thead>
             <tbody class="list">
-            @foreach($livres as $l)
+              @foreach($livres as $a)
             <tr>
               <th scope="row">
                   <i class="bg-warning"></i>
-                {{$l->id}}
+                {{$a->id}}
               </th>
               <td class="budget">
-                  {{$l->titre}}
-              </td>
-              <td>
-                  {{$l->image}}
-              </td>
-              <td>
-                  {{$l->langue}}
-              </td>
-              <td>
-                  {{$l->qte}}
-              </td>
-              <td>
-                  {{$l->prix}}
-              </td>
-              <td>
-                  {{$l->resume}}
-              </td>
-              <td>
-                  {{$l->idgenre}}
-              </td>
-              <td>
-                  {{$l->idtag}}
-              </td>
-              <td>
-                  {{$l->idauteur}}
-              </td>
-              <td>
-                  <a href=" {{ route('home.livres.edit',$l->id) }} " class="btn btn-info btn-sm">Modifier</a>
-                  <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
-                      class="btn btn-danger btn-sm">Supprimer</a>
-                      <form method="post" action="{{ route('home.livres.destroy',$l->id) }}">
                   <img class="cart-item-image" src="{{asset('images/'.$a->image)}}" alt="">
               </td>
               <td>
