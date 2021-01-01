@@ -54,26 +54,44 @@
               </tr>
             </thead>
             <tbody class="list">
-              @foreach($livres as $a)
+            @foreach($livres as $l)
             <tr>
               <th scope="row">
                   <i class="bg-warning"></i>
-                {{$a->id}}
+                {{$l->id}}
               </th>
               <td class="budget">
-                  {{$a->nom}}
+                  {{$l->titre}}
               </td>
               <td>
-                  {{$a->prenom}}
+                  {{$l->image}}
               </td>
               <td>
-                  {{$a->nationalite}}
+                  {{$l->langue}}
               </td>
               <td>
-                  <a href=" {{ route('home.auteurs.edit',$a->id) }} " class="btn btn-info btn-sm">Modifier</a>
+                  {{$l->qte}}
+              </td>
+              <td>
+                  {{$l->prix}}
+              </td>
+              <td>
+                  {{$l->resume}}
+              </td>
+              <td>
+                  {{$l->idgenre}}
+              </td>
+              <td>
+                  {{$l->idtag}}
+              </td>
+              <td>
+                  {{$l->idauteur}}
+              </td>
+              <td>
+                  <a href=" {{ route('home.livres.edit',$l->id) }} " class="btn btn-info btn-sm">Modifier</a>
                   <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
                       class="btn btn-danger btn-sm">Supprimer</a>
-                      <form method="post" action="{{ route('home.auteurs.destroy',$a->id) }}">
+                      <form method="post" action="{{ route('home.livres.destroy',$l->id) }}">
                           @method('DELETE')
                           <input type="hidden" name="_token" value="{{ csrf_token() }}">   
                       </form>
