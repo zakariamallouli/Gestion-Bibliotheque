@@ -45,6 +45,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Email_Verifié</th>
                 <th scope="col">Telephone</th>
+                <th scope="col">Roles</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -75,7 +76,7 @@
               <td>
                 {{$a->tel}}
             </td>
-                
+            <td>{{ implode(',', $a->roles()->get()->pluck('name')->toArray()) }}</td>
                 <td>
                     <a href=" {{ route('home.users.edit',$a->id) }} " class="btn btn-info btn-sm">Modifier</a>
                     <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 

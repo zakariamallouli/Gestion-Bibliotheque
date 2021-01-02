@@ -29,3 +29,6 @@ Route::resource('/home/tages' , 'Admin\TagesController', ['as'=>'home']);
 Route::resource('/home/livres' , 'Admin\LivresController', ['as'=>'home']);
 
 /******************************************Admin Routes******************************************/
+/*Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
+	Route::resource('/home/users','UsersController', ['expect' => ['show','create','store']]);
+});*/

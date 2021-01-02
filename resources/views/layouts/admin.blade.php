@@ -84,7 +84,7 @@
           <ul class="navbar-nav mb-md-3">
            
             <li class="nav-item">
-              <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/plugins/charts.html" target="_blank">
+              <a class="nav-link" href="{{ route('home.users.index')}} ">
                 <i class="ni ni-chart-pie-35"></i>
                 <span class="nav-link-text">Roles</span>
               </a>

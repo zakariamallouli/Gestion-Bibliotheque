@@ -1,17 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
+use App\User;
+use App\Role;
+use Gate;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $arr['users'] = User::all();
-        return view('admin.users.index')->with($arr);
+        $users = User::all();
+        return view('admin.users.index')->with('users',$users);
     }
 
     public function create()
@@ -58,6 +65,17 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        if(Gate::denies('edit-users')){
+            return redirect( route('admin.users.index'));
+        }
+
+        $roles = Role::all();
+
+        return view('admin.users.edit')->with([
+            'user' => $user,
+            'roles' => $roles
+        ]);
+
         $arr['user'] = $user;
         return view('admin.users.edit')->with($arr);
     }
@@ -72,6 +90,8 @@ class UsersController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $user->roles()->sync($request->roles);
+
         $user->name = $request->name;
         $user->cin = $request->cin;
         $user->email = $request->email;
@@ -87,6 +107,13 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
+        /*if(Gate::denies('delete-users')){
+            return redirect( route('home.users.index'));
+        }
+
+        $user->roles()->detach();
+        $user->delete();*/
+
         User::destroy($id);
         return redirect()->route('home.users.index')->with("success","Enregistrement Supprimé avec Succés");
     }
