@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Emprunt;
 
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -58,5 +59,10 @@ class User extends Authenticatable implements MustVerifyEmail
         }
 
         return false;
+    }
+
+    public function emprunts()
+    {
+        return $this->hasMany(Emprunt::class);
     }
 }

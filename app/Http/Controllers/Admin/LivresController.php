@@ -51,7 +51,7 @@ class LivresController extends Controller
             $file = date('YmdHis').rand(1,99999).'.'.$ext;
             //$filename->move('public/produits,$file');
             //$produit->image = $file;
-            $request->image->move(public_path("images"),$file);
+            $request->image->move(public_path("livres"),$file);
         }else{
             $file='';
         }
@@ -108,7 +108,7 @@ class LivresController extends Controller
         if(isset($request->image) && $request->image->getClientOriginalName()){
             $ext = $request->image->getClientOriginalExtension();
             $file = date('YmdHis').rand(1,99999).'.'.$ext;
-            $request->image->move(public_path("images"),$file);
+            $request->image->move(public_path("livres"),$file);
 
         }else{
 

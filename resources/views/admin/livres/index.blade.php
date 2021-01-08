@@ -11,7 +11,7 @@
         margin-right: 15px;
     }
 </style>
-    <div class="container-fluid mt-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
                 @if(session()->has('success'))
@@ -48,7 +48,7 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-white mb-0">Liste des Livres</h3>
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive text-center">
           <table class="table align-items-center table-light table-flush">
             <thead class="thead-light">
               <tr>
@@ -71,7 +71,7 @@
                 {{$a->id}}
               </th>
               <td class="budget">
-                  <img class="cart-item-image" src="{{asset('images/'.$a->image)}}" alt="">
+                  <img class="cart-item-image" src="{{asset('livres/'.$a->image)}}" alt="">
               </td>
               <td>
                   {{$a->titre}}
@@ -86,7 +86,7 @@
                 {{$a->prix}} DH
             </td>
             <td>
-                {{$a->auteur['nom']}}
+                {{$a->auteur['prenom']}}
             </td>
             <td>
               {{$a->genre['genre']}}

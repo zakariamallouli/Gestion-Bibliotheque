@@ -38,7 +38,7 @@
         <div class="card-header bg-transparent border-0">
           <h3 class="text-white mb-0">Liste des Auteurs</h3>
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive text-center">
           <table class="table align-items-center table-light table-flush">
             <thead class="thead-light">
               <tr>

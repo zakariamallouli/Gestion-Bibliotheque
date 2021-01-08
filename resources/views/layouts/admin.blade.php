@@ -27,7 +27,7 @@
       <!-- Brand -->
       <div class="sidenav-header  align-items-center">
         <a class="navbar-brand" href="javascript:void(0)">
-          <img src="{{ asset('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+          <img src="{{ asset('images/libraria-logo-v2.png') }}" class="navbar-brand-img" alt="...">
         </a>
       </div>
       <div class="navbar-inner">
@@ -36,7 +36,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="examples/dashboard.html">
+              <a class="nav-link active" href="{{ route('dashboard') }}">
                 <i class="ni ni-tv-2 text-primary"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
@@ -47,6 +47,12 @@
                 <span class="nav-link-text">Livres</span>
               </a>
             </li>    
+            <li class="nav-item">
+              <a  href="{{route('home.emprunts.index')}}" class="nav-link" href="examples/tables.html">
+                <i class="ni ni-archive-2 text-gray"></i>
+                <span class="nav-link-text">Emprunts</span>
+              </a>
+            </li>
             <li class="nav-item">
               <a href="{{route('home.auteurs.index')}}" class="nav-link" href="examples/icons.html">
                 <i class="ni ni-circle-08 text-orange"></i>
@@ -84,7 +90,7 @@
           <ul class="navbar-nav mb-md-3">
             <li class="nav-item">
               <a href="{{route('home.users.index')}}" class="nav-link">
-                <i class="ni ni-badge text-dark"></i>
+                <i class="ni ni-badge text-orange"></i>
                 <span class="nav-link-text">Roles</span>
               </a>
             </li>
@@ -94,7 +100,7 @@
             <a class="nav-link" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();">
-                  <i class="ni ni-send text-dark"></i>
+                  <i class="ni ni-send text-gray"></i>
                    {{ __('Logout') }}
                   </a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

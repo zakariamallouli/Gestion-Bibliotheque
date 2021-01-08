@@ -35,7 +35,7 @@
                                         @if($livres->image) 
                                         <label class="col-md-6 mx-auto">Image de Couverture
                                         <input type="file" name="image" class="form-control"  >
-                                        <img src="{{ asset('images/'.$livres->image) }}" alt="image" style="width: 150px;">
+                                        <img src="{{ asset('livres/'.$livres->image) }}" alt="image" style="width: 150px;">
                                         </label>
                                        @endif
                                         

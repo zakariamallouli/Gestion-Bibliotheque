@@ -3,6 +3,7 @@
 namespace App;
 use App\Auteur;
 use App\Genre;
+use App\Emprunt;
 use App\Tage;
 
 use Illuminate\Database\Eloquent\Model;
@@ -22,5 +23,10 @@ class Livre extends Model
     public function tags()
     {
         return $this->hasMany(Tage::class, 'idtag');
+    }
+
+    public function emprunts()
+    {
+        return $this->hasMany(Emprunt::class);
     }
 }
