@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\User;
 use App\Role;
+use App\User;
 use Gate;
 
 use App\Http\Controllers\Controller;
@@ -34,7 +34,7 @@ class UsersController extends Controller
      */
     public function store(Request $request,  User $user)
     {
-        $user->name = $request->name;
+        /*$user->name = $request->name;
         $user->cin = $request->cin;
         $user->email = $request->email;
         $user->adresse = $request->adresse;
@@ -43,7 +43,7 @@ class UsersController extends Controller
         if($user->save())
             return redirect('home/users')->with("success","Enregistrement Modifié avec Succés");
         else
-            return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");
+            return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");*/
     }
 
     /**
@@ -65,7 +65,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
-        if(Gate::denies('edit-users')){
+        /*if(Gate::denies('edit-users')){
             return redirect( route('admin.users.index'));
         }
 
@@ -77,7 +77,14 @@ class UsersController extends Controller
         ]);
 
         $arr['user'] = $user;
-        return view('admin.users.edit')->with($arr);
+        return view('admin.users.edit')->with($arr); */
+        $roles = Role::all();
+
+        return view('admin.users.edit', [
+            'user' => $user,
+            'roles' => $roles
+        ]);
+
     }
 
     /**
@@ -90,19 +97,10 @@ class UsersController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $user->roles()->sync($request->roles);
-
-        $user->name = $request->name;
-        $user->cin = $request->cin;
-        $user->email = $request->email;
-        $user->adresse = $request->adresse;
-        $user->tel = $request->tel;
-        $user->save();
-        if($user->save())
-            return redirect('home/users')->with("success","Enregistrement Modifié avec Succés");
-        else
-            return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");
-        
+        dd($request->roles);
+            /*$user->roles()->sync($request->roles);
+            return redirect()->route('admin.users.index');*/
+           
     }
 
     public function destroy($id)

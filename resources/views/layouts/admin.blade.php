@@ -82,12 +82,11 @@
           </h6>
           <!-- Navigation -->
           <ul class="navbar-nav mb-md-3">
-           
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('home.users.index')}} ">
-                <i class="ni ni-chart-pie-35"></i>
-                <span class="nav-link-text">Roles</span>
-              </a>
+          
+          <li>
+            <a class="dropdown-item" href="{{ route('home.users.index') }}">Roles</a>
+          </li>
+
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"

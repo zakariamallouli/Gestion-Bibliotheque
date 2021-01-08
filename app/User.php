@@ -39,9 +39,9 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     public function roles()
-{
-    return $this->belongsToMany('App\Role');
-}
+    {
+        return $this->belongsToMany('App\Role');
+    }
 
     public function hasAnyRoles($roles){
         if($this->roles()->whereIn('name', $roles)->first()){

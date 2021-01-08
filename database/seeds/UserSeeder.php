@@ -1,10 +1,10 @@
 <?php
-
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
-use App\User;
 use App\Role;
+use App\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserSeeder extends Seeder
 {
@@ -18,9 +18,7 @@ class UserSeeder extends Seeder
         User::truncate();
         DB::table('role_user')->truncate();
 
-        $adminRole = Role::where('name', 'admin')->first();
-        $authorRole = Role::where('name', 'author')->first();
-        $userRole = Role::where('name', 'user')->first();
+       
 
         $admin = User::create([
         	'name' => 'Admin User',
@@ -48,7 +46,10 @@ class UserSeeder extends Seeder
             'tel' => '0612457896',
         	'password' => Hash::make('password')
         ]);
-
+ 
+        $adminRole = Role::where('name', 'admin')->first();
+        $authorRole = Role::where('name', 'author')->first();
+        $userRole = Role::where('name', 'user')->first(); 
 
         $admin->roles()->attach($adminRole);
         $author->roles()->attach($authorRole);
