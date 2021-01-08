@@ -39,7 +39,20 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
+    public function roles(){
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function isAdmin() {
+        return $this->roles()->where('name','admin')->first();
+    }
+
+    public function hasAnyRoles(array $roles){
+        return $this->roles()->whereIn('name' , $roles)->first();
+    }
+
+
+    /*public function roles()
     {
         return $this->belongsToMany('App\Role');
     }
@@ -59,7 +72,7 @@ class User extends Authenticatable implements MustVerifyEmail
         }
 
         return false;
-    }
+    }*/
 
     public function emprunts()
     {

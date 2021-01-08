@@ -48,7 +48,7 @@
               </a>
             </li>    
             <li class="nav-item">
-              <a  href="{{route('home.emprunts.index')}}" class="nav-link">
+              <a  href="{{ route('home.emprunts.index') }}" class="nav-link">
                 <i class="ni ni-archive-2 text-gray"></i>
                 <span class="nav-link-text">Emprunts</span>
               </a>

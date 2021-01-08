@@ -27,9 +27,12 @@ Route::resource('/home/auteurs' , 'Admin\AuteursController', ['as'=>'home']);
 Route::resource('/home/genres' , 'Admin\GenresController', ['as'=>'home']);
 Route::resource('/home/tages' , 'Admin\TagesController', ['as'=>'home']);
 Route::resource('/home/livres' , 'Admin\LivresController', ['as'=>'home']);
-/*Route::resource('/home/emprunts' , 'Admin\EmpruntsController', ['as'=>'home']);*/
+//Route::resource('/home/emprunts' , 'Admin\EmpruntsController', ['as'=>'home']);
 
 /******************************************Admin Routes******************************************/
-Route::namespace('Admin')->prefix('home')->name('home.')->group(function() {
+Route::namespace('Admin')->prefix('home')->name('home.')->middleware('can:manage-users')->group(function() {
     Route::resource('users' , 'UsersController');
+});
+Route::namespace('Admin')->prefix('home')->name('home.')->group(function() {
+    Route::resource('emprunts' , 'EmpruntsController');
 });

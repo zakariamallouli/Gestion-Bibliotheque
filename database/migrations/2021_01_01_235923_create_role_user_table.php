@@ -20,13 +20,6 @@ class CreateRoleUserTable extends Migration
             $table->timestamps();
         });
 
-        /*Schema::table('role_user', function($table) {
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
-
-        Schema::table('role_user', function($table) {
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-        });*/
 
     
     }

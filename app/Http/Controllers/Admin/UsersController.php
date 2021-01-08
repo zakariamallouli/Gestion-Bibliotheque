@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 use App\Role;
 use App\User;
-use Gate;
+//use Gate;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class UsersController extends Controller
 {
@@ -34,16 +35,7 @@ class UsersController extends Controller
      */
     public function store(Request $request,  User $user)
     {
-        /*$user->name = $request->name;
-        $user->cin = $request->cin;
-        $user->email = $request->email;
-        $user->adresse = $request->adresse;
-        $user->tel = $request->tel;
-        $user->save();
-        if($user->save())
-            return redirect('home/users')->with("success","Enregistrement Modifié avec Succés");
-        else
-            return back()->with("error","Enregistrement n'a pas été Modifier, Ressayez");*/
+       
     }
 
     /**
@@ -78,6 +70,10 @@ class UsersController extends Controller
 
         $arr['user'] = $user;
         return view('admin.users.edit')->with($arr); */
+        if(Gate::denies('edit-users')){
+            return redirect()->route('home.users.index');
+        }
+
         $roles = Role::all();
 
         return view('admin.users.edit', [
@@ -97,22 +93,27 @@ class UsersController extends Controller
 
     public function update(Request $request, User $user)
     {
-        dd($request->roles);
-            /*$user->roles()->sync($request->roles);
-            return redirect()->route('admin.users.index');*/
+        $user->roles()->sync($request->roles);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+
+
+        return redirect()->route('home.users.index');
            
     }
 
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        /*if(Gate::denies('delete-users')){
+        if(Gate::denies('delete-users')){
             return redirect( route('home.users.index'));
         }
 
         $user->roles()->detach();
-        $user->delete();*/
+        $user->delete();
 
-        User::destroy($id);
+        
         return redirect()->route('home.users.index')->with("success","Enregistrement Supprimé avec Succés");
     }
 }

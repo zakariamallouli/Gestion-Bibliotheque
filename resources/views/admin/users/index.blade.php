@@ -79,12 +79,15 @@
             <td>{{ implode(', ', $a->roles()->get()->pluck('name')->toArray()) }}</td>
                 <td>
                     <a href=" {{ route('home.users.edit',$a->id) }} " class="btn btn-info btn-sm">Modifier</a>
+                    <!--@can('delete-users')   -->
                     <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()" 
                         class="btn btn-danger btn-sm">Supprimer</a>
+                    
                         <form method="post" action="{{ route('home.users.destroy',$a->id) }}">
                             @method('DELETE')
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">   
                         </form>
+                    <!--@endcan  -->
                 </td>
               </tr>
               @endforeach
