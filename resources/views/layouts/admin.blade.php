@@ -42,25 +42,25 @@
               </a>
             </li>
             <li class="nav-item">
-              <a  href="{{route('home.livres.index')}}" class="nav-link" href="examples/tables.html">
+              <a  href="{{route('home.livres.index')}}" class="nav-link">
                 <i class="ni ni-books text-green"></i>
                 <span class="nav-link-text">Livres</span>
               </a>
             </li>    
             <li class="nav-item">
-              <a  href="{{route('home.emprunts.index')}}" class="nav-link" href="examples/tables.html">
+              <a  href="{{route('home.emprunts.index')}}" class="nav-link">
                 <i class="ni ni-archive-2 text-gray"></i>
                 <span class="nav-link-text">Emprunts</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('home.auteurs.index')}}" class="nav-link" href="examples/icons.html">
+              <a href="{{route('home.auteurs.index')}}" class="nav-link">
                 <i class="ni ni-circle-08 text-orange"></i>
                 <span class="nav-link-text">Auteur</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('home.users.index')}}" class="nav-link" href="examples/profile.html">
+              <a href="{{route('home.users.index')}}" class="nav-link">
                   <i class="ni ni-satisfied text-yellow"></i>
                   <span class="nav-link-text">Adhérent</span>
                 </a>

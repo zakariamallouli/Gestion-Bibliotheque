@@ -50,7 +50,7 @@
 
                                     <div class="row mt-2">
                                       <label class="col-md-4">Langue
-                                        <select class="form-control" name="langue" id="langue" value="{{ $livres->langue }}"  require>
+                                        <select class="form-control" name="langue" id="langue" selected="{{ $livres->langue }}"  require>
                                             <option value="FR">FR</option>
                                             <option value="AR">AR</option>
                                             <option value="EN">EN</option>
@@ -59,7 +59,7 @@
                                       </label>
 
                                        <label class="col-md-4" for="genre">Genre
-                                           <select class="form-control" name="idgenre" id="genre" value="{{ $livres->genre }}">
+                                           <select class="form-control" name="idgenre" id="genre" selected="{{ $livres->genre }}">
                                              @foreach ($genres as $g)
                                                <option value="{{$g->id}}">{{$g->genre}}</option>
                                              @endforeach
@@ -67,7 +67,7 @@
                                        </label>
 
                                        <label class="col-md-4" for="auteur">Auteur
-                                            <select class="form-control" name="idauteur" id="auteur" value="{{ $livres->idauteur }}">
+                                            <select class="form-control" name="idauteur" id="auteur" selected="{{ $livres->idauteur }}">
                                               @foreach ($auteurs as $a)
                                                 <option value="{{$a->id}}">{{$a->nom}} {{$a->prenom}}</option>
                                               @endforeach
