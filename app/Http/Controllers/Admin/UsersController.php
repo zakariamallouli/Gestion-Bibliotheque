@@ -22,6 +22,13 @@ class UsersController extends Controller
         return view('admin.users.index')->with('users',$users);
     }
 
+    public function listeAdherent()
+    {
+        $users = User::all()->where('id','>', 2);
+        return view('admin.users.index')->with('users',$users);
+    }
+    
+
     public function create()
     {
         return view('admin.users.create');

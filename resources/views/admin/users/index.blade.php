@@ -36,7 +36,7 @@
           <h3 class="text-white mb-0">Liste des Adherents</h3>
         </div>
         <div class="table-responsive text-center">
-          <table class="table align-items-center table-light table-flush">
+          <table class="table align-items-center table-light">
             <thead class="thead-light">
               <tr>
                 <th scope="col">Id</th>
@@ -45,7 +45,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Email_Verifié</th>
                 <th scope="col">Telephone</th>
-                <th scope="col">Roles</th>
+                <th scope="col">Role</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -67,16 +67,20 @@
                 </td>
                 <td>
                   @if($a->email_verified_at == null)
-                    {{ 'NON' }}
+                    <span class="badge badge-danger">{{ 'NON' }}</span>
                   @else
-                  {{ 'OUI' }}
+                  <span class="badge badge-success">{{ 'OUI' }}</span>
                   @endif
               </td>
               
               <td>
                 {{$a->tel}}
             </td>
-            <td>{{ implode(', ', $a->roles()->get()->pluck('name')->toArray()) }}</td>
+            <td>
+              <span class="badge badge-light">
+                {{ implode(', ', $a->roles()->get()->pluck('name')->toArray()) }}
+              </span>
+            </td>
                 <td>
                     <a href=" {{ route('home.users.edit',$a->id) }} " class="btn btn-info btn-sm">Modifier</a>
                     <!--@can('delete-users')   -->

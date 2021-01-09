@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Livre;
 
 class HomeController extends Controller
 {
@@ -24,5 +24,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('dashboard');
+    }
+
+    public function listelivre()
+    {
+        $arr['livres'] = Livre::all();
+        return view('listelivre')->with($arr);
     }
 }

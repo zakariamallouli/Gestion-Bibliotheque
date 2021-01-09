@@ -12,9 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/******************************************Client Routes******************************************/
 
+/******************************************Client Routes******************************************/
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/livres', function () {
+    return view('listeLivre');
 });
 
 
@@ -22,7 +28,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 Route::get('/admin/dashboard', 'HomeController@index')->name('dashboard');
 Route::resource('/home/auteurs' , 'Admin\AuteursController', ['as'=>'home']);
-/*Route::resource('/home/users' , 'Admin\UsersController', ['as'=>'home']);*/
+Route::get('/home/adherent' , 'Admin\UsersController@listeAdherent');
 Route::resource('/home/genres' , 'Admin\GenresController', ['as'=>'home']);
 Route::resource('/home/tages' , 'Admin\TagesController', ['as'=>'home']);
 Route::resource('/home/livres' , 'Admin\LivresController', ['as'=>'home']);
@@ -34,3 +40,4 @@ Route::namespace('Admin')->prefix('home')->name('home.')->group(function() {
     Route::resource('emprunts' , 'EmpruntsController');
 });
 /******************************************Admin Routes******************************************/
+

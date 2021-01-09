@@ -60,7 +60,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{route('home.users.index')}}" class="nav-link">
+              <a href="{{url('/home/adherent')}}" class="nav-link">
                   <i class="ni ni-satisfied text-yellow"></i>
                   <span class="nav-link-text">Adhérent</span>
                 </a>
