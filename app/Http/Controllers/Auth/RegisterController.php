@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -81,5 +81,11 @@ class RegisterController extends Controller
         $user->roles()->attach($role);
 
         return $user;
+    }
+
+    protected function redirectTo() {
+        
+            return '/' ;
+        
     }
 }
